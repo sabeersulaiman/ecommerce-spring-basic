@@ -8,3 +8,4 @@ This project is developed as part of an assignment given for interview purposes.
 
 ## API Documentation
 - [Items (v1/items)](DOCS/items.md)
+- [Orders (v1/orders)](DOCS/orders.md)

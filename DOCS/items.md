@@ -6,14 +6,15 @@ Contains CRUD endpoints for items(products) in the e-commerce system.
 
 ```json
 {
-  "itemId": 4,
-  "title": "Google Pixel 2",
-  "description": "Google device.",
-  "tags": "Google,Pixel,2",
-  "stock": 10,
+  "dateAdded": "2019-07-18T19:30:24.585+0000",
+  "dateModified": "2019-07-18T19:30:24.585+0000",
   "deleted": false,
-  "dateAdded": "2019-07-18T15:47:20.280+0000",
-  "dateModified": "2019-07-18T15:47:20.280+0000"
+  "itemId": 1,
+  "title": "Google Pixel 2 XL",
+  "description": "Google device.",
+  "tags": "Google,Pixel,2,XL",
+  "stock": 100,
+  "cost": 1000
 }
 ```
 
@@ -28,7 +29,8 @@ Add a new item to the system. Responds with the newly added item.
   "title": "Google Pixel 2",
   "description": "Google device.",
   "tags": "Google,Pixel,2",
-  "stock": 10
+  "stock": 10,
+  "cost": 800
 }
 ```
 
@@ -41,14 +43,15 @@ Add a new item to the system. Responds with the newly added item.
 
 ```json
 {
-  "itemId": 4,
+  "dateAdded": "2019-07-18T19:31:21.931+0000",
+  "dateModified": "2019-07-18T19:31:21.931+0000",
+  "deleted": false,
+  "itemId": 2,
   "title": "Google Pixel 2",
   "description": "Google device.",
   "tags": "Google,Pixel,2",
-  "stock": 10,
-  "deleted": false,
-  "dateAdded": "2019-07-18T15:47:20.280+0000",
-  "dateModified": "2019-07-18T15:47:20.280+0000"
+  "stock": 100,
+  "cost": 800
 }
 ```
 
@@ -68,24 +71,26 @@ Gets the list of all the items in the system. Deleted ones are not retrieved.
 ```json
 [
   {
-    "itemId": 1,
-    "title": "iPhone X",
-    "description": "great iPhone.",
-    "tags": "iPhone,X,Apple",
-    "stock": 5,
+    "dateAdded": "2019-07-18T19:30:25.000+0000",
+    "dateModified": "2019-07-18T19:30:25.000+0000",
     "deleted": false,
-    "dateAdded": "2019-07-18T15:28:24.000+0000",
-    "dateModified": "2019-07-18T15:33:30.000+0000"
+    "itemId": 1,
+    "title": "Google Pixel 2 XL",
+    "description": "Google device.",
+    "tags": "Google,Pixel,2,XL",
+    "stock": 100,
+    "cost": 1000
   },
   {
-    "itemId": 3,
-    "title": "iPhone XR",
-    "description": "Crazy iPhone.",
-    "tags": "iPhone,XR,Apple",
-    "stock": 10,
+    "dateAdded": "2019-07-18T19:31:22.000+0000",
+    "dateModified": "2019-07-18T19:31:22.000+0000",
     "deleted": false,
-    "dateAdded": "2019-07-18T15:32:52.000+0000",
-    "dateModified": "2019-07-18T15:32:52.000+0000"
+    "itemId": 2,
+    "title": "Google Pixel 2",
+    "description": "Google device.",
+    "tags": "Google,Pixel,2",
+    "stock": 100,
+    "cost": 800
   }
 ]
 ```
@@ -98,14 +103,15 @@ Get a single item denoted by `id`. Fails with `404` status when the specified it
 
 ```json
 {
-  "itemId": 4,
+  "dateAdded": "2019-07-18T19:31:22.000+0000",
+  "dateModified": "2019-07-18T19:31:22.000+0000",
+  "deleted": false,
+  "itemId": 2,
   "title": "Google Pixel 2",
   "description": "Google device.",
   "tags": "Google,Pixel,2",
-  "stock": 10,
-  "deleted": false,
-  "dateAdded": "2019-07-18T15:47:20.280+0000",
-  "dateModified": "2019-07-18T15:47:20.280+0000"
+  "stock": 100,
+  "cost": 800
 }
 ```
 
@@ -117,11 +123,11 @@ Update the item provided in the body of the request. Requires the `itemId` prope
 
 ```json
 {
-  "itemId": 1,
-  "title": "iPhone X",
-  "description": "great iPhone.",
-  "tags": "iPhone,X,Apple",
-  "stock": 5
+  "title": "Google Pixel 2",
+  "description": "Google device.",
+  "tags": "Google,Pixel,2",
+  "stock": 100,
+  "cost": 800
 }
 ```
 
@@ -134,14 +140,15 @@ Update the item provided in the body of the request. Requires the `itemId` prope
 
 ```json
 {
-  "itemId": 1,
-  "title": "iPhone X",
-  "description": "great iPhone.",
-  "tags": "iPhone,X,Apple",
-  "stock": 5,
+  "dateAdded": "2019-07-18T19:31:22.000+0000",
+  "dateModified": "2019-07-18T19:31:22.000+0000",
   "deleted": false,
-  "dateAdded": "2019-07-18T15:28:24.000+0000",
-  "dateModified": "2019-07-18T15:33:30.280+0000"
+  "itemId": 2,
+  "title": "Google Pixel 2",
+  "description": "Google device.",
+  "tags": "Google,Pixel,2",
+  "stock": 100,
+  "cost": 800
 }
 ```
 
@@ -153,13 +160,14 @@ Deletes the item denoted by the `id` value. Throws `404` if the item is not foun
 
 ```json
 {
-  "itemId": 2,
-  "title": "iPhone XR",
-  "description": "Weird flex but not ok.",
-  "tags": "iPhone,XR,Apple",
-  "stock": 5,
+  "dateAdded": "2019-07-18T19:31:22.000+0000",
+  "dateModified": "2019-07-18T19:31:22.000+0000",
   "deleted": true,
-  "dateAdded": "2019-07-18T15:28:52.000+0000",
-  "dateModified": "2019-07-18T15:30:28.281+0000"
+  "itemId": 2,
+  "title": "Google Pixel 2",
+  "description": "Google device.",
+  "tags": "Google,Pixel,2",
+  "stock": 100,
+  "cost": 800
 }
 ```

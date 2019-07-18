@@ -26,6 +26,8 @@ public class ItemController {
                                @RequestParam(value = "count", required = false) int count) {
         // count is constrained into [1, 100] - else defaults to 10
         if(count > 100 || count <= 0) count = 10;
+        if(page < 0) page = 0;
+
         return itemService.getItemList(page, count);
     }
 
